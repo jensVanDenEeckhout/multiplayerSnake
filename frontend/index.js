@@ -50,12 +50,23 @@ function init() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   document.addEventListener('keydown', keydown);
+  document.addEventListener('keydown', keydown2);
+  
   gameActive = true;
 }
 
 function keydown(e) {
   socket.emit('keydown', e.keyCode);
 }
+
+// get the element
+const element = document.getElementById('up')
+
+// always checking if the element is clicked, if so, do alert('hello')
+element.addEventListener("click", () => {
+	alert('hello');
+});
+
 
 function paintGame(state) {
   ctx.fillStyle = BG_COLOUR;
