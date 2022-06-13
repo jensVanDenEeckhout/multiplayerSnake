@@ -58,14 +58,18 @@ function keydown(e) {
   socket.emit('keydown', e.keyCode);
 }
 
-// get the element
-const element = document.getElementById('up')
+const up = document.getElementById('up')
+up.addEventListener("click", () => { socket.emit('keydown', 38); });
 
-// always checking if the element is clicked, if so, do alert('hello')
-element.addEventListener("click", () => {
-	//alert('hello');
-	 socket.emit('keydown', 38);
-});
+const down = document.getElementById('down')
+down.addEventListener("click", () => { socket.emit('keydown', 40); });
+
+const left = document.getElementById('left')
+left.addEventListener("click", () => { socket.emit('keydown', 37); });
+
+const right = document.getElementById('right')
+right.addEventListener("click", () => { socket.emit('keydown', 39); });
+
 
 
 function paintGame(state) {
