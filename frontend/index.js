@@ -63,7 +63,8 @@ const element = document.getElementById('up')
 
 // always checking if the element is clicked, if so, do alert('hello')
 element.addEventListener("click", () => {
-	alert('hello');
+	//alert('hello');
+	 socket.emit('keydown', 38);
 });
 
 
